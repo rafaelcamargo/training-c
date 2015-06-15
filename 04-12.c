@@ -2,21 +2,34 @@
 
 void main(){
 
-	float e, a = 0;
-	int n, c = 0;
-
-	printf("Informe um valor para a espessura da folha:\n");
-	scanf("%f", &e);
-
-	printf("Informe a quantidade de empilhamentos:\n");
-	scanf("%d", &n);
+	char l;
+	int a=0, b=0, c=0, d=0, e=0, i=0;
 
 	do {
-		a += a ? a : e*2;
-		printf("Altura: %.4f | Empilhada: %d\n", a, c);
-		c++;
-	} while (c <= n);
+		printf("Informe o conceito do aluno (aA-eE):\n");
+		scanf("%c", &l);
+		l = tolower(l);
 
-	printf("A altura final da pilha foi igual a: %.2f\n", a);
+		if(l == 'a')
+			a++;
+		else if(l == 'b')
+			b++;
+		else if(l == 'c')
+			c++;
+		else if(l == 'd')
+			d++;
+		else if(l == 'e')
+			e++;
+		else
+			i++;
+
+	} while (l != 'z');
+
+	printf("Conceitos A: %d\n", a);
+	printf("Conceitos B: %d\n", b);
+	printf("Conceitos C: %d\n", c);
+	printf("Conceitos D: %d\n", d);
+	printf("Conceitos E: %d\n", e);
+	printf("Conceitos incorretos: %d\n", i);
 
 }
